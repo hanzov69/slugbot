@@ -4,7 +4,7 @@ import os
 import random
 from dotenv import load_dotenv
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 load_dotenv()
 
@@ -88,9 +88,9 @@ async def on_message(message: discord.Message):
         return
 
     if len(original) > 249:
-        text = f":snail: {message.author.mention} is a slug. They said: {slug_words}.\nToo much yapping to translate"
+        text = f":snail: {message.author.mention} is a slug, they said: {slug_words}.\nToo much yapping to translate"
     else:
-        text = f":snail: {message.author.mention} is a slug. They said: {slug_words}.\nThis translates to: {original}"
+        text = f":snail: {message.author.mention} is a slug, they said: {slug_words}.\n> {original}"
 
     await message.channel.send(text)
 
